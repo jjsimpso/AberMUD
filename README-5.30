@@ -1,0 +1,129 @@
+This is the 'official' 5.30 AberMUD driver release 0
+
+o	Extensive ANSI cleanups
+
+o	Fixed prototypes to be ANSI in most places
+
+o	Fixed problems with promotion rule variance between K&R and ANSI C
+
+o	Cleaned up the Makefile a little
+
+o	Cleaned up the client massively. Now expects a modern XPG type
+	curses library
+
+o	Now passes gcc -pedantic -Wall cleanly
+
+This is the 'official' 5.21 AberMUD driver release 5
+
+o	BSX has its own motd which can contain BSX graphics 
+	directives.
+
+o	Returns tidied up, Prototypes updated 
+
+o	Faulty function parameters cleaned up
+
+o	Missing prompt clear on connect added
+
+o	NARG implemented
+
+o	AmiTCP support added, the Amiga version can now sit
+	on the internet like the Linux/Unix versions.
+
+
+Release 5.21 BETA 4 Changes:
+
+o	Long names don't lose caller address information
+
+o	Containers now use the NameCFlag etc fields instead of
+	hardcoded field names.
+
+o	Sections of the manual now completed.
+
+o	BSX supports @RMO to remove objects from scenes
+
+o	File descriptor leak printing the motd is fixed.
+
+o	BSX mode input formatting is much better. BSX output
+	formatting doesn't generate stray newlines. BSX
+	seems ready for real use.
+
+o	Output formatting now uses \r\n everywhere.
+
+o	Linux testing now with 0.99.10 and the improved networking
+	software. It's got a couple of small quirks still but its now
+	plenty solid enough as a good MUD platform.
+
+
+
+
+Release 5.21 BETA 3 Changes:
+
+o	Snoop shows commands that are typed
+
+o	New actions PROCDAEMON PROCSUBJECT PROCOBJECT SETSUPER GETSUPER
+
+o	BSX fixes to send extra @RFS
+
+o	Doesn't send @TMS when it shouldn't
+
+o	@PUR purge sent to all BSX clients when a BSX object is loaded
+
+o	Ported Client to Linux and 'old' curses.
+
+o	Communications.h is now Comms.h for 14 character file name machines
+
+o	Object editing includes setting description 0
+
+
+
+Release 5.21 BETA 2 Changes:
+
+Changes:
+
+o	Clone now handles the inheritance properties. Because building
+	a lot of clones with tables would be slow and use a lot of memory
+	clones of an item use the original as the superclass, and have 
+	blank tables.
+
+o	Deletion tidies up tables which could otherwise get stuck, and 
+	invalidate lock counters.
+
+
+Release 5.21 BETA 1 Changes:
+
+o	Removal of all code written while I worked for Horrorsoft, so its
+	no longer arguably not all mine.
+
+o	Removal of AmigaDOS support: It was too much work to keep it in and
+	sort it all out so I've dropped it. In theory there should be no
+	problem merging the new driver with the old amiga comms. A little
+	tweaking might be needed for BSX however.
+
+o	Linux support. This has meant squashing a few bugs in the comms
+	layer. Linux tcp/ip isn't yet really up to a full time game driver,
+	It's close and I think in one or two more releases (ie about 0.99.7)
+	Linux will do the job well.
+
+o	Class inheritance support
+
+o	Quite a few bugs have been splatted including some comms layer ones
+	which could (and did occasionally) crash the daemon.
+
+o	Long motd messages work on all machines. The motd is now queued
+	like all normal text output, and doesn't rely on an initial
+	buffer that might not actually exist.
+
+o	Registration support, so you can write registration only, some
+	commands only available to the registered and similar styles of game.
+
+o	Dying does not delete the persona, only blanks it, so you can't kill
+	someone and steal the name.
+
+o	BSXmud graphics support is now in prototype form.
+
+o	Client mode bug from 5.20 BETA 2 is fixed.
+
+o	SaveUniverse no longer reports spurious errors
+
+WARNING: 5.21 generates a newer database format than 5.20, to allow for the BSX graphics elements.
+
